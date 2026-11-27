@@ -523,3 +523,12 @@ footer img{height:38px;margin:0 auto 16px;width:auto}
 .up span{font-size:13.5px;color:var(--mid)}
 a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{outline:2px solid var(--dark);outline-offset:3px}
 .close a:focus-visible,.close button:focus-visible{outline-color:#fff}
+
+/* hero rating: two columns on mobile (rating | text) */
+@media(max-width:560px){
+  .hero-rate{display:grid;grid-template-columns:auto 1fr;grid-template-areas:"num txt" "stars txt";column-gap:16px;row-gap:2px;align-items:center;flex-wrap:nowrap}
+  .hero-rate b{grid-area:num;font-size:34px;line-height:1;align-self:end}
+  .hero-rate .stars{grid-area:stars;font-size:14px;letter-spacing:1px;align-self:start}
+  .hero-rate>span:last-child{grid-area:txt;font-size:13.5px;line-height:1.35;padding-left:16px;border-left:1px solid rgba(46,31,19,.25)}
+}
+@media(max-width:560px){.qtag{top:-14px;right:8px}.qrow.best{margin-top:10px}}
