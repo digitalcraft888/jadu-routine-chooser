@@ -630,3 +630,11 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{o
   .strip-list li,.strip-list li:first-child,.strip-list li:nth-child(even){justify-content:center;text-align:left;padding:14px 8px}
   .strip-list li:last-child{justify-content:center}
 }
+
+/* hero benefit row: centered cells */
+.hero-ben li,.hero-ben li+li{align-items:center;text-align:center;padding:14px 10px}
+.hero-ben li:first-child{border-left:0}
+@media(max-width:1180px) and (min-width:561px){.hero-ben li:nth-child(3){padding-left:10px}}
+@media(max-width:560px){
+  .hero-ben li,.hero-ben li+li,.hero-ben li:nth-child(even){flex-direction:row;justify-content:center;align-items:center;text-align:left;padding:12px 8px}
+}
