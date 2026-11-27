@@ -584,3 +584,29 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{o
   .mc{font-size:9.5px;letter-spacing:.8px;padding:3px 8px}
   .cft>div{padding:14px 6px}.cft .btn{padding:10px 4px;font-size:11px;letter-spacing:.5px;min-height:46px}
 }
+
+/* trust strip: same structure as the hero benefit row */
+.strip .wrap{display:block;padding-top:0;padding-bottom:0}
+.strip-list{list-style:none;display:grid;grid-template-columns:repeat(5,1fr);margin:0;padding:0}
+.strip-list li{display:flex;flex-direction:column;align-items:flex-start;gap:8px;padding:20px 14px 20px 18px;font-size:12.5px;line-height:1.3;letter-spacing:.4px;text-transform:uppercase;color:var(--body);text-align:left}
+.strip-list li+li{border-left:1px solid rgba(46,31,19,.18)}
+.strip-list li:first-child{padding-left:0}
+.strip-list .ic{width:30px;height:30px;color:var(--dark)}
+@media(max-width:900px){
+  .strip-list{grid-template-columns:repeat(2,1fr)}
+  .strip-list li{flex-direction:row;align-items:center;gap:10px;padding:14px 8px 14px 0;font-size:11.5px}
+  .strip-list li+li{border-left:0}
+  .strip-list li:nth-child(even){padding-left:14px;border-left:1px solid rgba(46,31,19,.18)}
+  .strip-list li:nth-child(n+3){border-top:1px solid rgba(46,31,19,.18)}
+  .strip-list li:last-child{grid-column:1/-1;border-left:0;padding-left:0}
+  .strip-list .ic{width:24px;height:24px}
+}
+@media(min-width:701px) and (max-width:900px){
+  .strip-list{grid-template-columns:repeat(5,1fr)}
+  .strip-list li{flex-direction:column;align-items:flex-start;padding:16px 8px 16px 12px;font-size:11px}
+  .strip-list li:nth-child(n){border-top:0}
+  .strip-list li:nth-child(even),.strip-list li+li{border-left:1px solid rgba(46,31,19,.18)}
+  .strip-list li:first-child{padding-left:0;border-left:0}
+  .strip-list li:last-child{grid-column:auto}
+  .strip-list .ic{width:26px;height:26px}
+}
