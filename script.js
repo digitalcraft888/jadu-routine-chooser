@@ -1,7 +1,7 @@
 (function(){
 const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
-const P={duo:{name:'Wash Duo',price:51.75,img:'img/pack-duo.jpg',sub:'Shampoo + Conditioner'},
-         full:{name:'Full Routine',price:85.5,img:'img/pack-full.jpg',sub:'Split Ends Care + Shampoo + Conditioner'}};
+const P={duo:{name:'Wash Duo',was:69,price:51.75,img:'img/pack-duo.jpg',sub:'Shampoo + Conditioner'},
+         full:{name:'Full Routine',was:114,price:85.5,img:'img/pack-full.jpg',sub:'Split Ends Care + Shampoo + Conditioner'}};
 const FREE=69;
 let cart={duo:0,full:0},path='full';
 try{path=localStorage.getItem('jadu_path')||'full';cart=JSON.parse(localStorage.getItem('jadu_cart')||'{"duo":0,"full":0}')}catch(e){}
@@ -21,7 +21,9 @@ function openCart(o=true){$('#drawer').classList.toggle('on',o);$('#ov').classLi
 function setPath(p){
   path=p;try{localStorage.setItem('jadu_path',p)}catch(e){}
   $('#stImg').src=P[p].img;
-  $('#stName').textContent=P[p].name+' · '+fmt(P[p].price);$('#stSub').textContent=P[p].sub;
+  $('#stName').textContent=P[p].name;$('#stPrice').textContent=fmt(P[p].price);$('#stWas').textContent=fmt(P[p].was);$('#stSub').textContent=P[p].sub;
+  $('#stShip').textContent=P[p].price>=FREE?'Free US shipping included':fmt(FREE-P[p].price)+' away from free shipping';
+  const sa=$('#stAdd');if(!sa.dataset.o)sa.textContent='Add to cart · '+fmt(P[p].price);
   $$('[data-sw]').forEach(b=>b.classList.toggle('on',b.dataset.sw===p));
 }
 function add(k,btn){

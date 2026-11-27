@@ -317,9 +317,22 @@
 </footer>
 
 <!-- STICKY -->
-<div class="sticky" id="sticky"><div class="wrap2">
-  <div class="st-l"><img id="stImg" src="img/pack-full.jpg" alt=""><div><b id="stName">Full Routine · $85.50</b><small id="stSub">Split Ends Care + Shampoo + Conditioner</small></div></div>
-  <div style="display:flex;gap:10px;align-items:center"><div class="sw"><button data-sw="duo">Duo</button><button data-sw="full" class="on">Full</button></div><button class="btn btn-gold" id="stAdd">Add to cart</button></div>
+<div class="sticky" id="sticky" role="region" aria-label="Quick add to cart"><div class="wrap2">
+  <div class="st-l">
+    <img id="stImg" src="img/pack-full.jpg" alt="">
+    <div class="st-t">
+      <div class="st-n"><b id="stName">Full Routine</b><span class="st-badge">25% off</span></div>
+      <div class="st-p"><strong id="stPrice">$85.50</strong><s id="stWas">$114.00</s><small id="stSub">Split Ends Care + Shampoo + Conditioner</small></div>
+    </div>
+  </div>
+  <div class="st-r">
+    <span class="st-ship"><svg class="ic ic-s" aria-hidden="true"><use href="#i-truck"/></svg><span id="stShip">Free US shipping included</span></span>
+    <div class="sw" role="group" aria-label="Choose routine">
+      <button data-sw="duo"><span class="lg">Wash Duo</span><span class="sm">Duo</span><em>$51.75</em></button>
+      <button data-sw="full" class="on"><span class="lg">Full Routine</span><span class="sm">Full</span><em>$85.50</em></button>
+    </div>
+    <button class="btn btn-gold" id="stAdd">Add to cart · $85.50</button>
+  </div>
 </div></div>
 
 <!-- DRAWER -->
