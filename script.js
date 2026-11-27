@@ -13,8 +13,9 @@ function render(){
   $('#tot').textContent=fmt(tot);
   const left=FREE-tot;
   $('#fs').innerHTML=(n===0?'Free US shipping on orders $69+':left>0?`You’re <b>${fmt(left)}</b> away from free US shipping`:'You’ve unlocked <b>free US shipping</b>')+`<div class="bar"><i style="width:${Math.min(100,tot/FREE*100)}%"></i></div>`;
+  const up=(cart.duo>0&&cart.full===0)?`<div class="up"><b>Upgrade to the Full Routine</b><span>Add Split Ends Care for ${fmt(P.full.price-P.duo.price)} more and unlock free US shipping.</span><button class="btn btn-dark btn-block" data-swap>Switch to Full Routine · ${fmt(P.full.price)}</button></div>`:'';
   $('#dl').innerHTML=n===0?'<p class="empty">Your cart is empty.<br>Pick a routine to begin.</p>':
-    ['duo','full'].filter(k=>cart[k]).map(k=>`<div class="li"><img src="${P[k].img}" alt=""><div><b>${P[k].name}</b><small>${P[k].sub}</small><br><span class="qty"><button data-q="${k}:-1">−</button>${cart[k]}<button data-q="${k}:1">+</button></span></div><span class="pr">${fmt(P[k].price*cart[k])}</span></div>`).join('');
+    ['duo','full'].filter(k=>cart[k]).map(k=>`<div class="li"><img src="${P[k].img}" alt=""><div><b>${P[k].name}</b><small>${P[k].sub}</small><br><span class="qty"><button data-q="${k}:-1">−</button>${cart[k]}<button data-q="${k}:1">+</button></span></div><span class="pr">${fmt(P[k].price*cart[k])}</span></div>`).join('')+up;
   try{localStorage.setItem('jadu_cart',JSON.stringify(cart))}catch(e){}
 }
 function openCart(o=true){$('#drawer').classList.toggle('on',o);$('#ov').classList.toggle('on',o)}
@@ -34,6 +35,7 @@ function add(k,btn){
 }
 document.addEventListener('click',e=>{
   const a=e.target.closest('[data-add]');if(a){add(a.dataset.add,a);return}
+  const sw2=e.target.closest('[data-swap]');if(sw2){cart.duo=Math.max(0,cart.duo-1);cart.full++;setPath('full');render();return}
   const q=e.target.closest('[data-q]');if(q){const[k,d]=q.dataset.q.split(':');cart[k]=Math.max(0,cart[k]+ +d);render();return}
   const pk=e.target.closest('[data-pick]');if(pk){
     $('#choose').scrollIntoView({behavior:'smooth'});

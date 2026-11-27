@@ -511,3 +511,15 @@ footer img{height:38px;margin:0 auto 16px;width:auto}
   .sticky #stAdd{flex:1;min-width:0;padding:0 12px;font-size:12px;letter-spacing:.8px;min-height:50px}
 }
 @media(max-width:380px){.sticky .sw{flex-basis:42%}.sticky #stAdd{font-size:11.5px}}
+
+/* ===== trust + CRO additions ===== */
+.cardq{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 0;margin:0 0 18px}
+.cardq .stars{font-size:13px}
+.cardq blockquote{font:500 18px/1.3 var(--serif);margin:4px 0 6px}
+.cardq figcaption{font-size:12.5px;color:var(--mid)}
+.close-trust{margin:16px 0 0;font-size:12.5px;letter-spacing:.8px;text-transform:uppercase;color:rgba(255,255,255,.8)}
+.up{margin-top:18px;padding:16px;background:var(--cream);border:1px solid var(--sand3);display:grid;gap:8px}
+.up b{font:700 17px var(--serif);letter-spacing:.8px;text-transform:uppercase}
+.up span{font-size:13.5px;color:var(--mid)}
+a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{outline:2px solid var(--dark);outline-offset:3px}
+.close a:focus-visible,.close button:focus-visible{outline-color:#fff}
