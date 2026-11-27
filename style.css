@@ -532,3 +532,14 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{o
   .hero-rate>span:last-child{grid-area:txt;font-size:13.5px;line-height:1.35;padding-left:16px;border-left:1px solid rgba(46,31,19,.25)}
 }
 @media(max-width:560px){.qtag{top:-14px;right:8px}.qrow.best{margin-top:10px}}
+
+/* prices: Jost (site body font), lining figures, not Cormorant old-style numerals */
+.price .now,.qp,.st-p strong,.sticky .sw em,.li .pr,.df .tot span:last-child{font-family:var(--sans);font-variant-numeric:lining-nums tabular-nums;font-feature-settings:"lnum" 1,"tnum" 1;letter-spacing:0}
+.price .now{font-size:34px;font-weight:500;line-height:1}
+.price s,.qp s,.st-p s{font-family:var(--sans);font-weight:400;font-variant-numeric:lining-nums}
+.qp{font-size:18px;font-weight:600}
+.st-p strong{font-size:19px;font-weight:600}
+.sticky .sw em{font-size:14px;font-weight:600}
+.li .pr{font-size:16px;font-weight:600}
+.df .tot span:last-child{font-size:20px;font-weight:600}
+@media(max-width:560px){.price .now{font-size:30px}.qp{font-size:16px}}
